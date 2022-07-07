@@ -5,7 +5,7 @@ type FishProps = {
 };
 const Fish = (props: FishProps): JSX.Element => {
   return (
-    <div>fish</div>
+    <div>Hello world. :) A homepage for each fish could go here!</div>
   );
 }
 
