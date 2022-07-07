@@ -1,7 +1,6 @@
 import React from 'react';
 import fishingRegulations from '../../mock-data/fishes';
-import {Accordion, AccordionDetails, AccordionSummary, Card, CardContent, CardHeader, Typography} from "@mui/material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {Card, CardContent, Typography} from "@mui/material";
 import RegulationItem from "./RegulationItem";
 
 type HomeProps = {
@@ -21,13 +20,14 @@ const Home = (props: HomeProps): JSX.Element => {
       }}>
         <CardContent>
           <Typography variant={'body1'}>
-            Below is a list of fishes along with their applicable fishing regulations, which can include
+            Below is a list of fishes along with their applicable fishing regulations, which can include:
             <ul>
               <li>Fishing seasons</li>
               <li>Minimum and maximum sizes in inches</li>
               <li>Bag limits</li>
               <li>Fish nicknames</li>
             </ul>
+            Click a fish to see season information, and click a season to see applicable size and bag limits.
           </Typography>
         </CardContent>
       </Card>

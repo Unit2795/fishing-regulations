@@ -1,6 +1,8 @@
 # Fishing Regulations
 
-A simple display of fishing regulations and cursory information for a variety of different fish.
+![Sample image](sample-photo.png)
+
+A web page that displays fishing regulations
 
 Built for screens down to 356 pixel width. Tested up to 1920 x 1080.
 

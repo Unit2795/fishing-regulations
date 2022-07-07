@@ -97,7 +97,8 @@ const RegulationItem = ({fish, index}: RegulationItemProps): JSX.Element => {
     margin: '12px 0',
     border: '1px solid #d9d9d9',
     borderRadius: '6px',
-    padding: '6px'
+    padding: '6px',
+    backgroundColor: '#f2f2f2'
   };
 
   return (
@@ -144,74 +145,62 @@ const RegulationItem = ({fish, index}: RegulationItemProps): JSX.Element => {
                     <Typography variant={'h5'}>{isOpenSeason ? "Open Season" : `${start && start.toLocaleDateString('default', { month: 'numeric', day: 'numeric', year: 'numeric' })} to ${end && end.toLocaleDateString('default', { month: 'numeric', day: 'numeric', year: 'numeric' })}`}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Card sx={{
-                      '&:not(:first-child)': {
-                        marginTop: '12px'
-                      }
+                    <div style={{
+                      textAlign: 'center'
                     }}>
-                      <CardContent sx={{
-                        padding: '16px !important',
-                        backgroundColor: isOpenSeason ? '#ccffcc' : 'white'
-                      }}>
-                        <div style={{
-                          textAlign: 'center'
-                        }}>
-                          {
-                            (!isOpenSeason && start && end) && (
-                              <div style={infoSectorStyle}>
-                                <Typography
-                                  variant={'h5'}
-                                  style={{
-                                    padding: '6px 0 12px 0'
-                                  }}>Range</Typography>
-                                <SeasonRange start={start} end={end}/>
-                              </div>
-                            )
-                          }
-
+                      {
+                        (!isOpenSeason && start && end) && (
                           <div style={infoSectorStyle}>
                             <Typography
                               variant={'h5'}
                               style={{
                                 padding: '6px 0 12px 0'
-                              }}>Size Limit</Typography>
-                            <Card>
-                              <CardContent sx={{
-                                padding: '12px !important'
-                              }}>
-                                {isSizeRestricted ? (
-                                  season.minimumSize && season.maximumSize ? (
-                                    <Typography>{season.minimumSize} inch{season.minimumSize > 1 && 'es'} to {season.maximumSize} inch{season.maximumSize > 1 && 'es'}</Typography>
-                                  ) : (<Typography>{season.minimumSize ? (season.minimumSize) : (season.maximumSize)} inch{(Number(season.maximumSize) + Number(season.minimumSize)) && 'es'} {season.maximumSize ? "or below" : "or above"}</Typography>)
-                                ) : (
-                                  <Typography>No size limit</Typography>
-                                )}
-                              </CardContent>
-                            </Card>
+                              }}>Range</Typography>
+                            <SeasonRange start={start} end={end}/>
                           </div>
+                        )
+                      }
 
-                          <div style={infoSectorStyle}>
-                            <Typography
-                              variant={'h5'}
-                              style={{
-                                padding: '6px 0 12px 0'
-                              }}>Bag Limit</Typography>
-                            <Card>
-                              <CardContent sx={{
-                                padding: '12px !important'
-                              }}>
-                                {season.bagLimit ? (
-                                  <Typography>{season.bagLimit} max catches</Typography>
-                                ) : (
-                                  <Typography>No bag limit!</Typography>
-                                )}
-                              </CardContent>
-                            </Card>
-                          </div>
+                      <div style={infoSectorStyle}>
+                        <Typography
+                          variant={'h5'}
+                          style={{
+                            padding: '6px 0 12px 0'
+                          }}>Size Limit</Typography>
+                        <Card>
+                          <CardContent sx={{
+                            padding: '12px !important'
+                          }}>
+                            {isSizeRestricted ? (
+                              season.minimumSize && season.maximumSize ? (
+                                <Typography>{season.minimumSize} inch{season.minimumSize > 1 && 'es'} to {season.maximumSize} inch{season.maximumSize > 1 && 'es'}</Typography>
+                              ) : (<Typography>{season.minimumSize ? (season.minimumSize) : (season.maximumSize)} inch{(Number(season.maximumSize) + Number(season.minimumSize)) && 'es'} {season.maximumSize ? "or below" : "or above"}</Typography>)
+                            ) : (
+                              <Typography>No size limit</Typography>
+                            )}
+                          </CardContent>
+                        </Card>
+                      </div>
 
-                        </div>
-                      </CardContent>
-                    </Card>
+                      <div style={infoSectorStyle}>
+                        <Typography
+                          variant={'h5'}
+                          style={{
+                            padding: '6px 0 12px 0'
+                          }}>Bag Limit</Typography>
+                        <Card>
+                          <CardContent sx={{
+                            padding: '12px !important'
+                          }}>
+                            {season.bagLimit ? (
+                              <Typography>{season.bagLimit} max catches</Typography>
+                            ) : (
+                              <Typography>No bag limit!</Typography>
+                            )}
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </div>
                   </AccordionDetails>
                 </Accordion>
               );

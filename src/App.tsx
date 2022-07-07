@@ -9,23 +9,7 @@ let theme = createTheme({
     primary: {
       main: '#006E9C',
       light: '#EFFAFF',
-    },
-    secondary: {
-      main: '#4FA150',
-      light: '#EDF5ED',
-    },
-    warning: {
-      main: '#F28F1E',
-      light: '#FFF4CC',
-    },
-    error: {
-      dark: '#FF3A41',
-      main: '#ff666b',
-      light: '#ffccce',
-    },
-    grey: {
-      700: '#616161',
-    },
+    }
   },
   typography: {
     fontFamily: 'Montserrat',
@@ -62,24 +46,11 @@ let theme = createTheme({
     body1: {
       fontSize: '0.75rem',
       fontWeight: 'normal',
-      // color: theme.palette.grey[700]
     },
     caption: {
       color: '#757575',
-    },
-  },
-  components: {
-    MuiListItemButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: '15px',
-          '&.Mui-selected': {
-            background: '#EFFAFF',
-          },
-        },
-      },
-    },
-  },
+    }
+  }
 });
 
 function App() {
